@@ -4,45 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASAL PROJECT</title>
-    <link rel="stylesheet" href="Asal.css">
-    <script>
-        function addTask() {
-            const input = document.getElementById('new_todo');
-            const errorMessage = document.getElementById('error-message');
-            const value = input.value.trim();
-
-            if (/^[a-zA-Z ]+$/.test(value)) {
-                if (errorMessage) errorMessage.style.display = 'none';
-                alert('Task added: ' + value);
-                input.value = '';
-            } else {
-                if (!errorMessage) {
-                    const errorDiv = document.createElement('div');
-                    errorDiv.id = 'error-message';
-                    errorDiv.style.color = 'red';
-                    errorDiv.style.marginTop = '10px';
-                    errorDiv.textContent = 'Only letters are allowed!';
-                    document.querySelector('.todo-input').appendChild(errorDiv);
-                } else {
-                    errorMessage.style.display = 'block';
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="Asal.css">  
+    <script defer src="Asal.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="todo-input">
-            <h1 id="a1">TodoInput</h1>
+            <h1 id="a1">Todo Input</h1>
             <div class="border_for_todo_input">
-                
-            <input type="text" id="new_todo" placeholder="New Todo">
-            <button id="add_task" onclick="addTask()">Add new task</button>
+                <input type="text" id="new_todo" placeholder="New Todo">
+                <button id="add_task">Add new task</button>
+                <div id="error-message" style="color: red; margin-top: 10px; display: none;"></div>
             </div>
-            
         </div>
         <div class="todo-list">
-            <h3>Todo List</h3>
+            <h1>Todo List</h1>
+            <ul id="todo-list"></ul>
+            <!-- Buttons for filtering tasks -->
             <div class="filters">
                 <button id="all">All</button>
                 <button id="done">Done</button>

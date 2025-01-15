@@ -39,7 +39,7 @@ body {
 
 #add_task{
     position: relative;
-    top: 10px;
+    top: 20px;
     width: 800px;
 }
 
@@ -84,26 +84,19 @@ body {
 .todo-list {
     padding: 20px;
     position: relative;
-    top: -20px;
+    top: -60px;
 }
 
-#all{
-    width: 200px;
-}
 
-#done{
-    width: 200px;
-}
-
-#todo{
-    width: 200px;
-}
 
 .filters {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-    gap: 50px;
+    gap: 100px;
+    position: relative;
+    right: 20px;
+    
 }
 
 .filters button {
@@ -119,4 +112,64 @@ body {
 
 .filters button:hover {
     background-color: #005f7f;
+}
+
+
+#new_todo {
+    margin-bottom: 10px; /* إضافة مسافة بين الحقل وزر الإضافة */
+}
+
+#add_task {
+    margin-top: 10px; /* مسافة صغيرة لجعل الزر بعيدًا قليلاً عن الحقل */
+}
+
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left; /* عرض النص على اليسار */
+    display: block; /* ضمان أن الخطأ يُعرض بشكل جيد */
+    position: relative; /* لتجنب التداخل مع العناصر الأخرى */
+    top: -55px;
+    left: 300px;
+}
+
+
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 800px;
+    position: relative;
+    right: 250px;
+}
+
+.task-checkbox {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.task-item span {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.delete-button {
+    margin-left: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: red;
+}
+
+.delete-button:hover {
+    color: darkred;
 }
