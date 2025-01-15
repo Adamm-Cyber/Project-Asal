@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#a1{
+    position: relative;
+    top: -50px;
+}
+
+.container {
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: -350px;
+    padding: 400px;
+    
+}
+
+.border_for_todo_input{
+    border: solid 3px black;
+    width: 900px;
+    padding: 50px;
+    position: relative;
+    right: 300px;
+    box-shadow: 3px 3px 4px 4px #005f7f;
+    top: -40px;
+}
+
+#add_task{
+    position: relative;
+    top: 10px;
+    width: 800px;
+}
+
+#new_todo{
+    width: 800px;
+    position: relative;
+    right: -10px;
+    box-shadow: 2px 2px 2px 2px #008cba;
+}
+
+.todo-input {
+    padding: 20px;
+    
+    position: relative;
+    top: -20px;
+}
+
+.todo-input input {
+    width: calc(100% - 50px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.todo-input button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-input button:hover {
+    background-color: #005f7f;
+}
+
+.todo-list {
+    padding: 20px;
+    position: relative;
+    top: -20px;
+}
+
+#all{
+    width: 200px;
+}
+
+#done{
+    width: 200px;
+}
+
+#todo{
+    width: 200px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 50px;
+}
+
+.filters button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filters button:hover {
+    background-color: #005f7f;
+}
