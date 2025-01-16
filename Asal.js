@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const value = todoInput.value.trim();
 
         // التحقق من الإدخال
-        if (!/^[a-zA-Z ]+$/.test(value)) {
-            errorMessage.textContent = "Only letters are allowed!";
+        // السماح بالأحرف العربية والإنجليزية
+        if (!/^[\w\s\u0600-\u06FF]+$/.test(value)) {
+            errorMessage.textContent = "Only letters (English or Arabic) are allowed!";
             errorMessage.style.display = "block";
             return;
         } else if (value.length < 5) {

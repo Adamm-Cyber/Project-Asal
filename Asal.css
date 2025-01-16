@@ -1,73 +1,54 @@
+/* ضبط الصفحة */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
+    background-color: #9ac0c3;
+    margin: 20px 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
-#a1{
-    position: relative;
-    top: -50px;
-}
-
+/* حاوية الصفحة */
 .container {
     width: 400px;
-    background-color: #fff;
+    background-color: #80a4ae;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
-    margin-top: -350px;
-    padding: 400px;
-    
-}
-
-.border_for_todo_input{
-    border: solid 3px black;
-    width: 900px;
-    padding: 50px;
-    position: relative;
-    right: 300px;
-    box-shadow: 3px 3px 4px 4px #005f7f;
-    top: -40px;
-}
-
-#add_task{
-    position: relative;
-    top: 20px;
-    width: 800px;
-}
-
-#new_todo{
-    width: 800px;
-    position: relative;
-    right: -10px;
-    box-shadow: 2px 2px 2px 2px #008cba;
-}
-
-.todo-input {
     padding: 20px;
-    
-    position: relative;
-    top: -20px;
+    border: double 3px black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 600px;
+    width: 900px;
 }
 
-.todo-input input {
-    width: calc(100% - 50px);
+/* حاوية إدخال المهام */
+.border_for_todo_input {
+    border: solid 3px black;
+    width: 90%;
+    padding: 20px;
+    box-shadow: 3px 3px 4px 4px #005f7f;
+    margin: 20px auto;
+}
+
+/* حقل الإدخال وزر الإضافة */
+#new_todo {
+    width: 80%;
     padding: 10px;
     font-size: 16px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 2px 2px #008cba;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 10px;
 }
 
-.todo-input button {
-    padding: 10px 15px;
+#add_task {
+    width: 80%;
+    padding: 10px;
     font-size: 16px;
     background-color: #008cba;
     color: white;
@@ -77,30 +58,51 @@ body {
     transition: background-color 0.3s;
 }
 
-.todo-input button:hover {
+#add_task:hover {
     background-color: #005f7f;
 }
 
+/* قائمة المهام */
 .todo-list {
-    padding: 20px;
-    position: relative;
-    top: -60px;
+    margin-top: 20px;
 }
 
+#todo-list {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style: none;
+    margin: 0 auto;
+    width: 80%;
+    box-sizing: border-box;
+}
 
+/* العناصر الفردية في القائمة */
+#todo-list li {
+    word-wrap: break-word;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+/* الأزرار لتصفية المهام */
 .filters {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    gap: 100px;
-    position: relative;
-    right: 20px;
-    
+    justify-content: space-between;
+    margin: 20px auto;
+    gap: 10px;
+    width: 80%;
 }
 
 .filters button {
-    padding: 10px 20px;
+    flex: 1;
+    padding: 10px;
     font-size: 16px;
     background-color: #008cba;
     color: white;
@@ -114,60 +116,29 @@ body {
     background-color: #005f7f;
 }
 
-
-#new_todo {
-    margin-bottom: 10px; /* إضافة مسافة بين الحقل وزر الإضافة */
-}
-
-#add_task {
-    margin-top: 10px; /* مسافة صغيرة لجعل الزر بعيدًا قليلاً عن الحقل */
-}
-
-#error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: left; /* عرض النص على اليسار */
-    display: block; /* ضمان أن الخطأ يُعرض بشكل جيد */
-    position: relative; /* لتجنب التداخل مع العناصر الأخرى */
-    top: -55px;
-    left: 300px;
-}
-
-
-
-.task-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 800px;
-    position: relative;
-    right: 250px;
-}
-
-.task-checkbox {
-    margin-right: 10px;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.task-item span {
-    flex-grow: 1;
-    margin-left: 10px;
-}
-
-.delete-button {
-    margin-left: 10px;
+/* زر القلم */
+.edit-button {
+    background-color: transparent;
     border: none;
-    background: none;
+    font-size: 16px; /* تم تصغير الحجم هنا */
     cursor: pointer;
-    font-size: 1.2rem;
+    margin-left: 10px; /* لضمان بقاء القلم قريبًا من النص */
+    color: #008cba;
+    transition: color 0.3s;
+}
+
+.edit-button:hover {
+    color: #005f7f;
+}
+
+/* تحسين تنسيق الحذف */
+.delete-button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
     color: red;
+    transition: color 0.3s;
 }
 
 .delete-button:hover {
