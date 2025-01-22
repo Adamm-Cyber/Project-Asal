@@ -1,7 +1,9 @@
-/* ضبط الصفحة */
+/* ====================
+    ضبط الصفحة
+==================== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #9ac0c3;
+    background-color: white;
     margin: 20px 0;
     padding: 0;
     display: flex;
@@ -10,50 +12,46 @@ body {
     justify-content: center;
 }
 
-/* حاوية الصفحة */
+/* ====================
+    حاوية الصفحة
+==================== */
 .container {
-    width: 400px;
-    background-color: #80a4ae;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    width: 900px;
+    position: relative;
+    top: -50px;
     overflow: hidden;
     text-align: center;
     padding: 20px;
-    border: double 3px black;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     height: 600px;
-    width: 900px;
 }
 
-/* حاوية إدخال المهام */
+/* ====================
+    حاوية إدخال المهام
+==================== */
 .border_for_todo_input {
     border: solid 3px black;
     width: 90%;
     padding: 20px;
     box-shadow: 3px 3px 4px 4px #005f7f;
     margin: 20px auto;
+    
 }
 
-/* حقل الإدخال وزر الإضافة */
-#new_todo {
+#new_todo, #add_task {
     width: 80%;
     padding: 10px;
     font-size: 16px;
     margin-bottom: 10px;
+    border-radius: 4px;
     box-shadow: 2px 2px 2px 2px #008cba;
     border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 #add_task {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
     background-color: #008cba;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -62,7 +60,9 @@ body {
     background-color: #005f7f;
 }
 
-/* قائمة المهام */
+/* ====================
+    قائمة المهام
+==================== */
 .todo-list {
     margin-top: 20px;
 }
@@ -70,16 +70,15 @@ body {
 #todo-list {
     max-height: 300px;
     overflow-y: auto;
-    overflow-x: hidden;
     border: 1px solid #ccc;
     padding: 10px;
     list-style: none;
     margin: 0 auto;
     width: 80%;
     box-sizing: border-box;
+    width: 850px;
 }
 
-/* العناصر الفردية في القائمة */
 #todo-list li {
     word-wrap: break-word;
     margin: 5px 0;
@@ -87,60 +86,131 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-/* الأزرار لتصفية المهام */
-.filters {
-    display: flex;
     justify-content: space-between;
-    margin: 20px auto;
+}
+
+/* ====================
+    تنسيق العناصر داخل المهام
+==================== */
+.task-content {
+    display: flex;
+    align-items: center;
     gap: 10px;
-    width: 80%;
-}
-
-.filters button {
     flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #008cba;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.filters button:hover {
-    background-color: #005f7f;
+.task-checkbox {
+    margin-right: 10px;
 }
 
-/* زر القلم */
-.edit-button {
+/* ====================
+    أزرار المهام
+==================== */
+.edit-button, .delete-button {
     background-color: transparent;
     border: none;
-    font-size: 16px; /* تم تصغير الحجم هنا */
+    font-size: 20px;
     cursor: pointer;
-    margin-left: 10px; /* لضمان بقاء القلم قريبًا من النص */
-    color: #008cba;
     transition: color 0.3s;
+}
+
+.edit-button {
+    color: #008cba;
 }
 
 .edit-button:hover {
     color: #005f7f;
 }
 
-/* تحسين تنسيق الحذف */
 .delete-button {
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
     color: red;
-    transition: color 0.3s;
 }
 
 .delete-button:hover {
     color: darkred;
+}
+
+/* ====================
+    أزرار التصفية
+==================== */
+.todo-filters {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    position: relative;
+    top: -15px;
+}
+
+.filter-button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.filter-button:hover {
+    background-color: #005f7f;
+}
+
+/* ====================
+    تنسيق مربع Checkbox
+==================== */
+.task-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #008cba;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: #fff;
+}
+
+.task-checkbox:checked {
+    background-color: #008cba;
+    border-color: #005f7f;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M20.285 6.708l-11.31 11.31-4.242-4.242-1.414 1.414 5.656 5.656 12.724-12.724-1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+}
+
+.task-checkbox:hover {
+    border-color: #005f7f;
+    box-shadow: 0 0 5px rgba(0, 91, 127, 0.5);
+}
+
+/* ====================
+    أزرار الحذف
+==================== */
+.buttons-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: -60px;
+}
+
+.red-button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.red-button:hover {
+    background-color: darkred;
 }

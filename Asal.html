@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASAL PROJECT</title>
+    <title>Todo Manager</title>
     <link rel="stylesheet" href="Asal.css">
     <script defer src="Asal.js"></script>
 </head>
@@ -19,14 +19,19 @@
         </div>
         <div class="todo-list">
             <h1>Todo List</h1>
-            <!-- Buttons for filtering tasks -->
-            <div class="filters">
-                <button id="all">All</button>
-                <button id="done">Done</button>
-                <button id="todo">Todo</button>
+            <div class="todo-filters">
+                <button id="filter-all" class="filter-button">All</button>
+                <button id="filter-done" class="filter-button">Done</button>
+                <button id="filter-todo" class="filter-button">Todo</button>
             </div>
         </div>
         <ul id="todo-list"></ul>
     </div>
+    <div class="buttons-container">
+        <button id="delete_all_tasks" class="red-button">Delete All Tasks</button>
+        <button id="delete_done_tasks" class="red-button">Delete Done Tasks</button>
+    </div>
+    
+
 </body>
 </html>
