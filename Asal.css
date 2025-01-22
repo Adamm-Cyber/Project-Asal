@@ -137,9 +137,9 @@ body {
 .todo-filters {
     display: flex;
     justify-content: center;
-    gap: 300px;
     position: relative;
     top: -15px;
+    gap: 10px;
 }
 
 .filter-button {
@@ -213,4 +213,19 @@ body {
 
 .red-button:hover {
     background-color: darkred;
+}
+
+
+
+#filter-all{
+    width: 200px;
+    
+}
+
+#filter-done{
+    width: 200px;
+}
+
+#filter-todo{
+    width: 200px;
 }
