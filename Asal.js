@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // تحديث المهمة في Local Storage
     function updateTaskInStorage(oldTask, newTask) {
         let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-        const taskIndex = tasks.indexOf(oldTask);
+        const taskIndex = tasks.indexOf(oldTask); 
         if (taskIndex !== -1) {
             tasks[taskIndex] = newTask;
         }

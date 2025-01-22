@@ -124,7 +124,7 @@ body {
 }
 
 .delete-button {
-    color: red;
+    color: red; 
 }
 
 .delete-button:hover {
