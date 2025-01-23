@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterAllButton = document.getElementById("filter-all");
     const filterDoneButton = document.getElementById("filter-done");
     const filterTodoButton = document.getElementById("filter-todo");
+    const deleteAllTasksButton = document.getElementById("delete_all_tasks"); // الزر الأحمر "Delete All Tasks"
+    const deleteDoneTasksButton = document.getElementById("delete_done_tasks"); // الزر الأحمر "Delete Done Tasks"
 
     // تنظيف localStorage من البيانات غير الصحيحة
     cleanLocalStorage();
@@ -148,6 +150,37 @@ document.addEventListener("DOMContentLoaded", function () {
         tasks = tasks.filter((t) => t !== task);
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }
+
+    // حذف جميع المهام
+    function deleteAllTasks() {
+        // حذف جميع المهام من واجهة المستخدم
+        todoList.innerHTML = "";
+
+        // حذف جميع المهام من localStorage
+        localStorage.removeItem("tasks");
+    }
+
+    // حذف المهام المكتملة
+    function deleteDoneTasks() {
+        const tasks = document.querySelectorAll(".task-item");
+        tasks.forEach((task) => {
+            const checkbox = task.querySelector(".task-checkbox");
+            if (checkbox.checked) {
+                // حذف المهمة من واجهة المستخدم
+                todoList.removeChild(task);
+
+                // حذف المهمة من localStorage
+                const taskText = task.querySelector("span").textContent;
+                removeTaskFromStorage(taskText);
+            }
+        });
+    }
+
+    // إضافة حدث النقر على الزر "Delete All Tasks"
+    deleteAllTasksButton.addEventListener("click", deleteAllTasks);
+
+    // إضافة حدث النقر على الزر "Delete Done Tasks"
+    deleteDoneTasksButton.addEventListener("click", deleteDoneTasks);
 
     // تصفية المهام
     function filterTasks() {
